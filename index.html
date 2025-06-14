@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dengue: Alerta Total - Informação, Prevenção e Dados</title>
+
+  <link rel="stylesheet" href="dengue.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+</head>
+<body>
+  <header id="main-header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-mosquito"></i> DengueAlerta
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#sintomas" class="nav-link">Sintomas</a></li>
+          <li><a href="#tipos-dengue" class="nav-link">Tipos</a></li>
+          <li><a href="#tratamento" class="nav-link">Tratamento</a></li>
+          <li><a href="#prevencao" class="nav-link">Prevenção</a></li>
+          <li><a href="#mitos-verdades" class="nav-link">Mitos</a></li>
+          <li><a href="#estatisticas" class="nav-link">Estatísticas</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar modo escuro">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Abrir menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <video autoplay loop muted playsinline class="hero-video">
+        <source src="https://videos.pexels.com/video-files/8538722/8538722-hd_1920_1080_25fps.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="animate-on-scroll fade-in-down">Dengue: Não Seja a Próxima Vítima!</h1>
+      <p class="animate-on-scroll fade-in-up" data-delay="0.2s">Conhecimento é poder. Proteja-se e ajude a combater o mosquito <em>Aedes aegypti</em> com informação e ação.</p>
+      <a href="#prevencao" class="btn btn-primary animate-on-scroll fade-in-up" data-delay="0.4s"><i class="fas fa-shield-alt"></i> Aprenda a Prevenir Agora</a>
+      <a href="#estatisticas" class="btn btn-secondary animate-on-scroll fade-in-up" data-delay="0.6s"><i class="fas fa-chart-line"></i> Ver Dados Atuais</a>
+    </div>
+  </section>
+
+  <section class="about-section content-section" id="sobre">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">O Que é Dengue? Desvendando o Inimigo</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">
+        A Dengue é uma doença infecciosa febril aguda, causada por um arbovírus do gênero Flavivirus, transmitido pela picada da fêmea infectada do mosquito <em>Aedes aegypti</em>. Outras arboviroses como Zika e Chikungunya também são transmitidas por este vetor. Existem quatro sorotipos conhecidos do vírus da dengue (DENV-1, DENV-2, DENV-3 e DENV-4). Uma pessoa infectada por um sorotipo desenvolve imunidade permanente contra ele, mas permanece suscetível aos demais. Infecções subsequentes por sorotipos diferentes aumentam significativamente o risco de desenvolver formas graves da doença, como a Dengue Hemorrágica (DH) ou a Síndrome de Choque da Dengue (SCD).
+      </p>
+      <div class="about-grid">
+        <div class="about-item animate-on-scroll slide-in-left">
+          <i class="fas fa-mosquito"></i>
+          <h3>O Vetor: Aedes aegypti</h3>
+          <p>Pequeno, escuro com listras brancas no corpo e pernas. Atividade hematofágica diurna. Deposita ovos em água limpa e parada.</p>
+        </div>
+        <div class="about-item animate-on-scroll slide-in-bottom">
+          <i class="fas fa-retweet"></i>
+          <h3>Ciclo de Transmissão</h3>
+          <p>Humano virêmico (com vírus no sangue) -> Mosquito pica -> Mosquito se infecta (após período de incubação extrínseca) -> Mosquito pica -> Novo humano infectado.</p>
+        </div>
+        <div class="about-item animate-on-scroll slide-in-right">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>Impacto e Distribuição</h3>
+          <p>Endêmica em regiões tropicais e subtropicais, a dengue é um desafio global de saúde pública, com expansão geográfica contínua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="symptoms-section content-section" id="sintomas">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Sintomas: Fique Atento aos Sinais!</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">A dengue pode variar de assintomática a quadros graves. Identificar os sintomas precocemente é vital.</p>
+      <div class="symptoms-grid">
+        <div class="symptom-card animate-on-scroll pop-in">
+          <div class="symptom-icon"><i class="fas fa-temperature-full"></i></div>
+          <h3>Febre Alta e Súbita</h3>
+          <p>Geralmente (39°C a 40°C), de início abrupto.</p>
+        </div>
+        <div class="symptom-card animate-on-scroll pop-in" data-delay="0.1s">
+          <div class="symptom-icon"><i class="fas fa-head-side-virus"></i></div>
+          <h3>Dor de Cabeça Intensa</h3>
+          <p>Frequentemente retro-orbital (atrás dos olhos).</p>
+        </div>
+        <div class="symptom-card animate-on-scroll pop-in" data-delay="0.2s">
+          <div class="symptom-icon"><i class="fas fa-joint"></i></div>
+          <h3>Dores Musculares e Articulares</h3>
+          <p>Conhecida como "febre quebra-ossos".</p>
+        </div>
+        <div class="symptom-card symptom-card-alert animate-on-scroll pop-in" data-delay="0.3s">
+          <div class="symptom-icon"><i class="fas fa-exclamation-circle"></i></div>
+          <h3>Sinais de Alarme (Gravidade!)</h3>
+          <p>Dor abdominal intensa e contínua, vômitos persistentes, sangramentos (gengiva, nariz, pele), sonolência/irritabilidade, hipotensão. <strong>Busque ajuda médica URGENTE!</strong></p>
+        </div>
+         <div class="symptom-card animate-on-scroll pop-in" data-delay="0.4s">
+          <div class="symptom-icon"><i class="fas fa-battery-quarter"></i></div>
+          <h3>Fadiga e Prostração</h3>
+          <p>Cansaço extremo e debilidade.</p>
+        </div>
+        <div class="symptom-card animate-on-scroll pop-in" data-delay="0.5s">
+          <div class="symptom-icon"><i class="fas fa-tint-slash"></i></div> <h3>Manchas Vermelhas (Exantema)</h3>
+          <p>Pode surgir na pele, com ou sem coceira.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dengue-types-section content-section" id="tipos-dengue">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Manifestações Clínicas da Dengue</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">Entender as diferentes formas da doença ajuda na busca por cuidados adequados.</p>
+      <div class="types-grid">
+        <div class="type-item animate-on-scroll slide-in-left">
+          <i class="fas fa-stethoscope"></i>
+          <h3>Dengue Clássica (Sem Sinais de Alarme)</h3>
+          <p>Forma mais branda, autolimitada. Sintomas gerais como febre, dores. A maioria se recupera em até 7-10 dias com cuidados básicos.</p>
+        </div>
+        <div class="type-item type-item-warning animate-on-scroll slide-in-bottom">
+          <i class="fas fa-bell"></i>
+          <h3>Dengue com Sinais de Alarme</h3>
+          <p>Evolução da dengue clássica que requer monitoramento hospitalar. Presença de dor abdominal intensa, vômitos, sangramentos, queda de plaquetas.</p>
+        </div>
+        <div class="type-item type-item-danger animate-on-scroll slide-in-right">
+          <i class="fas fa-procedures"></i>
+          <h3>Dengue Grave (DH/SCD)</h3>
+          <p>Potencialmente fatal. Inclui Dengue Hemorrágica (DH) com extravasamento de plasma, e Síndrome de Choque da Dengue (SCD) com falência circulatória. Tratamento intensivo é crucial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="treatment-section content-section" id="tratamento">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Tratamento e Recomendações Médicas</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">Ainda não há antiviral específico, mas o manejo clínico adequado salva vidas.</p>
+      <ul class="treatment-list">
+        
+        <li class="animate-on-scroll fade-in-up">
+          <i class="fas fa-pills"></i>
+          <div>
+            <strong>Medicação Sintomática Cautelosa:</strong> Paracetamol ou dipirona para febre e dor. <strong>NUNCA use AAS (ácido acetilsalicílico), aspirina ou anti-inflamatórios não esteroides (ibuprofeno, diclofenaco)</strong>, pois podem agravar hemorragias.
+          </div>
+        </li>
+
+        <li class="animate-on-scroll fade-in-up" data-delay="0.1s">
+          <i class="fas fa-prescription-bottle"></i>
+          <div>
+            <strong>Hidratação Oral e Venosa:</strong> Reposição de líquidos é vital. Água, sucos, água de coco, soro caseiro. Em casos graves, hidratação venosa em ambiente hospitalar.
+          </div>
+        </li>
+
+        <li class="animate-on-scroll fade-in-up" data-delay="0.2s">
+          <i class="fas fa-procedures"></i>
+          <div>
+            <strong>Repouso Absoluto:</strong> Fundamental para a recuperação do organismo.
+          </div>
+        </li>
+        
+        <li class="animate-on-scroll fade-in-up" data-delay="0.3s">
+          <i class="fas fa-user-md"></i>
+          <div>
+            <strong>Monitoramento Médico Contínuo:</strong> Essencial, especialmente se houver sinais de alarme ou em grupos de risco (crianças, idosos, gestantes, comorbidades).
+          </div>
+        </li>
+
+        <li class="animate-on-scroll fade-in-up" data-delay="0.4s">
+          <i class="fas fa-shield-virus"></i>
+          <div>
+            <strong>Isolamento do Vetor:</strong> Durante a fase febril, o paciente deve se proteger de picadas de mosquito (repelentes, mosquiteiros) para evitar a transmissão do vírus para outros mosquitos.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="prevention-section content-section" id="prevencao">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Prevenção: A Guerra é Contra o Mosquito!</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">Combater o <em>Aedes aegypti</em> é responsabilidade de todos. Ações simples fazem grande diferença.</p>
+      <div class="prevention-grid">
+        <div class="prevention-card animate-on-scroll pop-in">
+          <i class="fas fa-hand-sparkles"></i>
+          <h3>Elimine Água Parada SEMANALMENTE</h3>
+          <p>Vasos, pneus, calhas, garrafas, pratos de plantas. Lave as bordas dos recipientes.</p>
+        </div>
+        <div class="prevention-card animate-on-scroll pop-in" data-delay="0.1s">
+          <i class="fas fa-box"></i>
+          <h3>Tampe Caixas d'Água e Cisternas</h3>
+          <p>Mantenha-as bem vedadas. Limpe-as periodicamente.</p>
+        </div>
+        <div class="prevention-card animate-on-scroll pop-in" data-delay="0.2s">
+          <i class="fas fa-recycle"></i>
+          <h3>Lixo no Lugar Certo</h3>
+          <p>Mantenha lixeiras tampadas e descarte o lixo adequadamente. Evite acúmulos.</p>
+        </div>
+        <div class="prevention-card animate-on-scroll pop-in" data-delay="0.3s">
+          <i class="fas fa-wind"></i>
+          <h3>Use Repelente e Roupas Protetoras</h3>
+          <p>Principalmente em áreas de surto. Use roupas claras e compridas, se possível.</p>
+        </div>
+        <div class="prevention-card animate-on-scroll pop-in" data-delay="0.4s">
+          <i class="fas fa-window-maximize"></i>
+          <h3>Instale Telas e Mosquiteiros</h3>
+          <p>Em janelas, portas e sobre camas, especialmente para bebês e acamados.</p>
+        </div>
+        <div class="prevention-card animate-on-scroll pop-in" data-delay="0.5s">
+          <i class="fas fa-hands-helping"></i>
+          <h3>Mobilização Comunitária</h3>
+          <p>Participe e incentive mutirões de limpeza e conscientização no seu bairro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="myths-truths-section content-section" id="mitos-verdades">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Dengue: Separando Fatos de Boatos</h2>
+      <div class="accordion">
+        <div class="accordion-item animate-on-scroll fade-in-up">
+          <button class="accordion-header">
+            Apenas água suja e parada serve de criadouro. <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p><strong>MITO.</strong> O <em>Aedes aegypti</em> prefere água limpa e parada para depositar seus ovos. A fêmea busca locais com pouca matéria orgânica.</p>
+          </div>
+        </div>
+        <div class="accordion-item animate-on-scroll fade-in-up" data-delay="0.1s">
+          <button class="accordion-header">
+            Velas de citronela e andiroba repelem o mosquito eficazmente. <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p><strong>MITO.</strong> Esses métodos têm eficácia limitada e de curta duração, principalmente em ambientes abertos. Não substituem repelentes tópicos registrados nem a eliminação de criadouros.</p>
+          </div>
+        </div>
+        <div class="accordion-item animate-on-scroll fade-in-up" data-delay="0.2s">
+          <button class="accordion-header">
+            Tomar complexo B ou alho afasta o mosquito. <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p><strong>MITO.</strong> Não existe qualquer comprovação científica de que a ingestão de vitaminas do complexo B, alho, ou outros alimentos altere o odor corporal a ponto de repelir o mosquito.</p>
+          </div>
+        </div>
+        <div class="accordion-item animate-on-scroll fade-in-up" data-delay="0.3s">
+          <button class="accordion-header">
+            Dengue só se pega uma vez na vida. <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p><strong>MITO.</strong> Existem quatro sorotipos de dengue. A infecção por um sorotipo confere imunidade permanente apenas para ele. É possível contrair dengue até quatro vezes, e infecções subsequentes por sorotipos diferentes aumentam o risco de formas graves.</p>
+          </div>
+        </div>
+         <div class="accordion-item animate-on-scroll fade-in-up" data-delay="0.4s">
+          <button class="accordion-header">
+            O mosquito da dengue só pica durante o dia. <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p><strong>VERDADE PARCIAL.</strong> O <em>Aedes aegypti</em> tem hábitos predominantemente diurnos, com picos de atividade no início da manhã e final da tarde. No entanto, pode picar à noite se houver fontes de luz artificial ou se estiver dentro de casa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statistics-section content-section" id="estatisticas">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Painel da Dengue no Brasil (Série Histórica)</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">
+        Acompanhe a série histórica de casos prováveis de dengue de 2014 a 2023. Dados oficiais extraídos do Boletim Epidemiológico do Ministério da Saúde. Para informações completas, consulte o <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue/situacao-epidemiologica" target="_blank" rel="noopener noreferrer">Ministério da Saúde</a>.
+      </p>
+      <div class="chart-container animate-on-scroll pop-in" data-delay="0.2s">
+        <canvas id="dengueChart"></canvas>
+      </div>
+      <div class="stats-summary-enhanced animate-on-scroll fade-in-up" data-delay="0.3s">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+          <div class="stat-info">
+            <p>Casos Prováveis em 2023</p>
+            <span id="totalCasesStat">0</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-arrow-trend-up"></i></div>
+          <div class="stat-info">
+            <p>Pico de Casos (Ano)</p>
+            <span id="severeCasesStat">0</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-calculator"></i></div>
+          <div class="stat-info">
+            <p>Média Anual (2014-2023)</p>
+            <span id="deathsStat">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section content-section" id="contato">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-in">Fale Conosco e Denuncie Focos</h2>
+      <p class="section-subtitle animate-on-scroll fade-in" data-delay="0.1s">Sua dúvida, sugestão ou denúncia de focos do mosquito é importante. Não hesite em nos contatar.</p>
+      <form id="contactForm" class="animate-on-scroll slide-in-bottom" data-delay="0.2s">
+        <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome Completo:</label>
+              <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Assunto:</label>
+          <input type="text" id="subject" name="subject" placeholder="Motivo do contato (Dúvida, Denúncia, Sugestão)" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" placeholder="Descreva sua solicitação ou denúncia detalhadamente..." rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full-width"><i class="fas fa-paper-plane"></i> Enviar Mensagem</button>
+      </form>
+      <p id="formMessage" class="form-status-message"></p>
+    </div>
+  </section>
+
+  <footer id="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>DengueAlerta</h3>
+          <p>Informação e prevenção são as chaves para um Brasil mais seguro contra a dengue. Este é um portal educacional e informativo.</p>
+          <p class="small-text"><em>Site desenvolvido como exemplo. Dados estatísticos são baseados em informações parciais e sujeitos a alteração. Consulte fontes oficiais.</em></p>
+        </div>
+        <div class="footer-links">
+          <h3>Navegação Rápida</h3>
+          <ul>
+            <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre a Dengue</a></li>
+            <li><a href="#sintomas"><i class="fas fa-first-aid"></i> Sintomas e Alertas</a></li>
+            <li><a href="#prevencao"><i class="fas fa-shield-alt"></i> Dicas de Prevenção</a></li>
+            <li><a href="#estatisticas"><i class="fas fa-chart-bar"></i> Painel de Dados</a></li>
+            <li><a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ministério da Saúde</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Conecte-se</h3>
+          <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2025</span> DengueAlerta. Todos os direitos reservados. Criado por Matheus Mendes - 60006105, Gabriel Foscarini - 60008405, Gustavo Beppler - 60009372, Vitor Utzig - 60007840.</p>
+        <p><a href="#inicio" class="back-to-top">Voltar ao Topo <i class="fas fa-chevron-up"></i></a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dengue.js"></script>
+</body>
+</html>
